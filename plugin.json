@@ -10,5 +10,11 @@
   "homepage": "https://tickets.vybe.social",
   "repository": "https://github.com/vybe-company/vybe-mcp",
   "license": "MIT",
-  "keywords": ["vybe", "events", "tickets", "mcp", "agent-skills"]
+  "keywords": [
+    "vybe",
+    "events",
+    "tickets",
+    "mcp",
+    "agent-skills"
+  ]
 }
