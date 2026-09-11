@@ -1,0 +1,29 @@
+{
+  "name": "vybe-mcp",
+  "displayName": "Vybe",
+  "version": "1.0.0",
+  "description": "Create, discover, and manage Vybe event pages through the hosted Vybe MCP server.",
+  "author": {
+    "name": "Vybe",
+    "email": "contact@vybe.social"
+  },
+  "homepage": "https://tickets.vybe.social",
+  "repository": "https://github.com/vybe-company/vybe-mcp",
+  "license": "MIT",
+  "keywords": [
+    "vybe",
+    "events",
+    "tickets",
+    "mcp",
+    "skills"
+  ],
+  "category": "integrations",
+  "tags": [
+    "vybe",
+    "events",
+    "tickets",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json",
+  "skills": "./skills/"
+}

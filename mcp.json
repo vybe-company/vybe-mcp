@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vybe": {
+      "type": "http",
+      "url": "https://tickets.vybe.social/api/mcp"
+    }
+  }
+}
