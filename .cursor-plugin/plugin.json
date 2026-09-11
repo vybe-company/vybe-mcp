@@ -1,0 +1,12 @@
+{
+  "name": "vybe-mcp",
+  "version": "1.0.0",
+  "description": "Official Vybe Agent Skills and MCP plugin for creating, managing, and discovering events.",
+  "author": {
+    "name": "Vybe"
+  },
+  "homepage": "https://tickets.vybe.social",
+  "repository": "https://github.com/vybe-company/vybe-mcp",
+  "license": "MIT",
+  "keywords": ["vybe", "events", "tickets", "mcp", "agent-skills"]
+}
