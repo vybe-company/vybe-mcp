@@ -31,7 +31,7 @@ Use `CREATE`, `UPDATE`, and `DELETE` diffs.
 - Never delete required `event_name`, `theme`, `required_fields`, `visibility`, or `date_time` sections.
 - Delete `cover_image` only when the user explicitly wants the optional poster removed.
 - Preserve section order unless reordering is part of the request.
-- Upload new media with `media.create_upload` and `media.confirm` before referencing its `mediaId`.
+- Upload new media with `media.create_upload` and `media.confirm` before referencing its `mediaId`. Both calls require a typed `target`: `profile_gallery`, `event_cover`, `event_section`, `event_theme`, or `event_lineup`. `media.get` and `media.delete` use the same `target`.
 
 ## Ticket changes and invitations
 
@@ -52,7 +52,7 @@ After ticket changes, remind the host that at least 65% of sold tickets must be 
 
 ## Participants, balance, and measurement
 
-- `events.list_participants` returns ticket-holder profiles, emails, join times, and tickets. Minimize exposure and never disclose this personal data unnecessarily.
+- `events.list_participants` returns ticket-holder profiles by username, emails, join times, and tickets. `date_of_birth` and `gender` appear only when that event's `required_fields` selected them. Minimize exposure and never disclose this personal data unnecessarily.
 - `events.get_balance` returns sales, fees, refunds, available funds, and scan readiness. Reading is allowed; payout requests remain human-only.
 - `events.get_pixels` returns Meta/TikTok IDs and whether server tokens exist, never stored secrets.
 - `events.update_pixel` sets or removes a pixel. Ask before changing tracking. Omit `accessToken` to preserve the existing secret; an empty `pixelId` removes the integration.
@@ -61,5 +61,7 @@ After ticket changes, remind the host that at least 65% of sold tickets must be 
 
 - For a human-owned event, use `events.create_agent_invite` and send the approval URL to the current owner.
 - Publishing, payout requests, ownership transfer, cancellation, and other owner-only lifecycle actions must return or use the human-action URL. Do not imply the agent completed them.
+
+Profiles use `username`, not `handle`.
 
 Use `https://tickets.vybe.social/openapi.json` when exact payload fields are needed.
