@@ -26,7 +26,7 @@ Do not require every optional detail before beginning. Separate facts required t
 
 ## Build the draft
 
-1. If media is needed, call `media.create_upload`, upload the exact declared JPEG or MP4 bytes to the signed URL, then call `media.confirm`. Use returned `mediaId` values in sections.
+1. If media is needed, call `media.create_upload` with a typed `target` (`profile_gallery`, `event_cover`, `event_section`, `event_theme`, or `event_lineup`), upload the exact declared JPEG or MP4 bytes to the signed URL, then call `media.confirm` with the same `target`. Use returned `mediaId` values in sections.
 2. Call `events.create` once with one ordered `sections` array and optional `ticketTypes`.
 3. Give the user the returned event URL and human claim/publish URL. The agent creates a draft; a human becomes main host and publishes it.
 
@@ -34,7 +34,7 @@ Required singleton sections:
 
 - `event_name` — short and memorable;
 - `theme`;
-- `required_fields`;
+- `required_fields` — may include `first_name`, `last_name`, `instagram_handle`, `profile_picture`, `phone`, `date_of_birth`, and `gender`;
 - `visibility` — `public` or `unlisted`;
 - `date_time` — accurate `startsAt`, `endsAt`, and IANA `timeZone`.
 
@@ -68,5 +68,7 @@ For each ticket pool, confirm name, description, price, ISO currency, capacity, 
 - Offer to create labelled door-staff access with `events.create_scanner_code`; the scanner is at `https://tickets.vybe.social/scanner`.
 - Explain that at least 65% of sold tickets must be scanned in person before payouts unlock unless the event has a waiver.
 - Do not claim to publish, request payouts, or transfer ownership. These actions are human-only.
+
+Profiles use `username`, not `handle`.
 
 Use `https://tickets.vybe.social/openapi.json` when exact payload fields are needed.

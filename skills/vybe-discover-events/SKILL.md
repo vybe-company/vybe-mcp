@@ -36,7 +36,7 @@ Discovery parameters:
 2. Start with the narrowest useful discovery request.
 3. Follow `nextPageToken` only when more results are needed, keeping all filters unchanged.
 4. Fetch a specific event by token before answering detailed questions about tickets, timing, venue, or policies.
-5. Compare only fields present in the response. Never infer age limits, availability, refund policy, accessibility, lineup, exact location, or ticket inclusions.
+5. Compare only fields present in the response. Never infer age limits, availability, refund policy, accessibility, lineup, exact location, or ticket inclusions. Public event `required_fields` may include `date_of_birth` and `gender`; those values are not part of public discovery or public profiles. Organizer identities use `username`, not `handle`.
 
 ## Recommendations
 
